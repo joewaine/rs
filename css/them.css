@@ -287,5 +287,5 @@ body{
 }
 
 .l-header__nav{
-    background: white;
+    background: white !important;
 }
