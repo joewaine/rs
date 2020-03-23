@@ -32,9 +32,25 @@
 
 
 
-  
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  
+    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor); 
+  
+    if (isChrome) {
+      $('.video-responsive.is-chrome.chrome-img').hide();
+  }else{
+    $('.video-responsive.not-chrome.chrome-img').hide();
+  }
+    
+
+
+
+    </script> -->
+
+
   <style type="text/css" id="web-fonts-css">
     @font-face {
       font-family: 'Graphik Bold Subset';
@@ -134,13 +150,46 @@ max-width: 100%;
     position:relative;
     height:0;
 }
-.video-responsive iframe{
+.video-responsive iframe,.video-responsive img{
     left:0;
     top:0;
     height:100%;
     width:100%;
     position:absolute;
+    cursor: pointer;
 }
+
+
+
+.video-responsive.not-chrome{
+  display: block;
+}
+
+
+
+.video-responsive img.bottom{
+  cursor: pointer;
+  opacity:1;
+
+}
+
+
+.video-responsive img.top{
+  opacity: 0;
+  cursor: pointer;
+   transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+
+
+.video-responsive img.top:hover{
+cursor: pointer;
+opacity:1
+}
+
+
+
 </style>
 
   <!--[if IE]>
@@ -454,9 +503,20 @@ max-width: 100%;
     
 
 
-<div class="video-responsive" style="margin-top: 15px;margin-bottom: 15px">
+<div class="video-responsive not-chrome" style="margin-top: 15px;margin-bottom: 15px">
     <iframe width="420" height="315" src="https://www.youtube.com/embed/w7k6oBXu8IM" frameborder="0" allowfullscreen></iframe>
 </div>
+
+
+<div class="video-responsive is-chrome chrome-img" style="margin-top: 15px;margin-bottom: 15px">
+  <a href="https://www.youtube.com/watch?v=w7k6oBXu8IM" target="_blank">
+<img class="bottom" src="img/1-1.jpg" style="width: 100%;"/>
+<img class="top" src="img/1-2.jpg" style="width: 100%;"/>
+  </a>
+</div>
+
+
+
 
 
 
@@ -506,9 +566,19 @@ max-width: 100%;
           </span>    
       </p>
 <p>
-  <div class="video-responsive">
+  <div class="video-responsive not-chrome">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/OEke4hDxyD0" frameborder="0" allowfullscreen></iframe>
       </div>
+
+      <div class="video-responsive chrome-img is-chrome" style="margin-top: 15px;margin-bottom: 15px">
+        <a href="https://www.youtube.com/watch?v=OEke4hDxyD0" target="_blank">
+        <img class="bottom" src="img/2-1.jpg" style="width: 100%;"/>
+        <img class="top" src="img/2-2.jpg" style="width: 100%;"/>
+        </a>
+        </div>
+        
+
+
 </p>
 
 <p>
@@ -1211,6 +1281,35 @@ max-width: 100%;
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  
+    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor); 
+  
+    if (isChrome) {
+
+
+
+
+      $('.video-responsive.not-chrome').hide();
+      $('.video-responsive.not-chrome').css('pointer-events','none');
+
+
+    }else{
+      $('.video-responsive.is-chrome.chrome-img').hide();
+
+      $('.video-responsive.is-chrome.chrome-img').css('pointer-events','none');
+
+  }
+    
+
+
+
+    </script>
+
+
 </body>
 
 </html>
